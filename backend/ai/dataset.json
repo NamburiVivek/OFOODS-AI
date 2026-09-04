@@ -1,0 +1,668 @@
+[
+  {
+    "intent": "greeting",
+    "category": "general",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Hi", "Hello", "Hey", "Good morning", "Good afternoon", "Good evening",
+      "Howdy", "Hola", "Namaste", "What's up", "Sup", "Yo", "Hey there",
+      "Hi there", "Hello there", "Hii", "Helo", "Helloo", "Hiii"
+    ],
+    "responseStrategy": "Greet the user warmly and offer to help them shop."
+  },
+  {
+    "intent": "farewell",
+    "category": "general",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Bye", "Goodbye", "See you", "Later", "Take care", "Thanks bye",
+      "Thank you bye", "Ok bye", "Bye bye", "Tata"
+    ],
+    "responseStrategy": "Say goodbye warmly and invite them to come back."
+  },
+  {
+    "intent": "thanks",
+    "category": "general",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Thanks", "Thank you", "Thx", "Thnx", "Thanks a lot", "Thank you so much",
+      "Much appreciated", "Ty", "Tysm", "Thanks!", "Awesome thanks"
+    ],
+    "responseStrategy": "Acknowledge gratitude and offer further help."
+  },
+  {
+    "intent": "capabilities",
+    "category": "general",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What can you do?", "Help me", "What are you?", "Who are you?",
+      "What do you do?", "How can you help?", "What are your features?",
+      "What can I ask you?", "Show me what you can do", "Help"
+    ],
+    "responseStrategy": "Explain AI capabilities: product search, recommendations, cart help, order info, navigation."
+  },
+  {
+    "intent": "confused",
+    "category": "general",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "I don't know what to order", "I'm confused", "Not sure what I want",
+      "I'm hungry", "I'm looking for something good", "What should I eat?",
+      "Suggest something", "I'm bored of my usual food", "Surprise me",
+      "Just recommend something", "Pick something for me", "idk what to get"
+    ],
+    "responseStrategy": "Offer popular or bestselling products from the catalog and ask about preferences."
+  },
+  {
+    "intent": "product_list",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What products do you have?", "Show me all products", "What do you sell?",
+      "What's available?", "Show me your menu", "List all items",
+      "What products are available?", "What can I buy?", "Show me everything",
+      "What all do you have?", "Products list", "Menu please", "Whatcha got?"
+    ],
+    "responseStrategy": "Show product categories and counts from the actual catalog."
+  },
+  {
+    "intent": "product_category",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Show me snacks", "Show me pickles", "I want spices", "Show me sweets",
+      "What pickles do you have?", "What snacks are available?",
+      "Show me non-veg pickles", "Any chips?", "Do you have masala powders?",
+      "Show me veg pickles", "List all spices", "What sweets do you have?",
+      "Show chips and wafers", "Any hot snacks?", "Show karam powders",
+      "I want pickle", "Give me sweets list", "Non veg items"
+    ],
+    "responseStrategy": "Filter products by the requested category from the actual catalog and display them."
+  },
+  {
+    "intent": "product_search",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Do you have mango pickle?", "Find tomato pickle", "Search for laddu",
+      "Do you have chicken pickle?", "Is mutton pickle available?",
+      "Find products with sesame", "Search rasam powder", "Do you have boondi?",
+      "I'm looking for gongura pickle", "Got any prawn pickle?",
+      "Do u have lemon pickle", "Is amla pickle there?", "Any carrot wafers?"
+    ],
+    "responseStrategy": "Search the actual product catalog by name/description and return matching products."
+  },
+  {
+    "intent": "product_info",
+    "category": "product_information",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Tell me about tomato pickle", "What is mango pickle?",
+      "How much does chicken pickle cost?", "What's the price of mutton pickle?",
+      "What ingredients does rasam powder have?", "Describe garam masala",
+      "Tell me more about this product", "Product details",
+      "What category does boondi mixture belong to?", "Is gongura pickle popular?"
+    ],
+    "responseStrategy": "Retrieve the specific product's details (name, price, category, description) from the catalog."
+  },
+  {
+    "intent": "product_cheapest",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What is the cheapest item?", "Show me the cheapest products",
+      "Most affordable items", "Lowest priced items", "Budget items",
+      "What's the cheapest thing you sell?", "Cheapest product",
+      "Show me the least expensive item", "Sabse sasta kya hai?"
+    ],
+    "responseStrategy": "Sort the catalog by price ascending and return the cheapest items."
+  },
+  {
+    "intent": "product_expensive",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What is the most expensive item?", "Show me premium products",
+      "Most expensive items", "Highest priced items", "Luxury items",
+      "What's the costliest thing?", "Priciest product",
+      "Show me the most expensive product"
+    ],
+    "responseStrategy": "Sort the catalog by price descending and return the most expensive items."
+  },
+  {
+    "intent": "product_price_range",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Show me products under ₹100", "Products between ₹100 and ₹500",
+      "Items under 200 rupees", "What can I get for ₹150?",
+      "Products below ₹200", "Anything under 100?", "Items under Rs 300",
+      "Show products in 100-200 range", "Under 500", "Under ₹1000",
+      "Things less than 100 rupees", "Show me stuff under 150"
+    ],
+    "responseStrategy": "Filter the catalog by the price range and return matching products."
+  },
+  {
+    "intent": "product_popular",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What are the best-selling items?", "Show me popular products",
+      "What's popular?", "Bestsellers", "Top items", "Most popular",
+      "What do people usually buy?", "Best products", "Top sellers",
+      "What's trending?", "Customer favorites", "What should I try first?"
+    ],
+    "responseStrategy": "Return products marked as bestseller/popular from the catalog."
+  },
+  {
+    "intent": "product_vegetarian",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Which products are vegetarian?", "Show me veg items only",
+      "I'm vegetarian, what can I buy?", "Veg options", "Pure veg items",
+      "No non-veg please", "Vegetarian products", "Any veg pickles?",
+      "Only vegetarian", "Veg only please"
+    ],
+    "responseStrategy": "Filter the catalog excluding non-veg categories and return vegetarian products."
+  },
+  {
+    "intent": "product_sweet",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "I want something sweet", "Show me sweet items", "What sweets do you have?",
+      "Sweet snacks", "Any sweet options?", "I have a sweet tooth",
+      "Give me something sweet", "Sweet things", "Desserts",
+      "Show me mithai", "Any laddus?", "Sweet boondi available?",
+      "What are the best sweet items?"
+    ],
+    "responseStrategy": "Filter the catalog for sweet items and return them."
+  },
+  {
+    "intent": "product_spicy",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "I want something spicy", "Show me spicy items", "Spicy products",
+      "What's the spiciest item?", "Give me something hot and spicy",
+      "Spicy pickles", "Karam items", "Chilli powder",
+      "What are the best spicy items?", "I like spicy food",
+      "Most spicy products", "Anything fiery?"
+    ],
+    "responseStrategy": "Filter the catalog for spicy/karam items and return them."
+  },
+  {
+    "intent": "product_hot",
+    "category": "product_discovery",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What are the best hot items?", "Show me hot snacks", "I want hot items",
+      "Hot and crunchy snacks", "Savoury snacks", "Tea time snacks",
+      "Crunchy items", "Show hot snack items", "I want namkeen",
+      "Hot mixture", "Any hot items?"
+    ],
+    "responseStrategy": "Filter the catalog for hot snack items and return them."
+  },
+  {
+    "intent": "recommend_general",
+    "category": "recommendations",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Recommend something for me", "What should I buy?", "Suggest something",
+      "Give me something popular", "What do you recommend?",
+      "I want a recommendation", "Pick something for me",
+      "Best items to try", "First time here, what should I get?"
+    ],
+    "responseStrategy": "Recommend a curated set of popular products from different categories."
+  },
+  {
+    "intent": "recommend_budget",
+    "category": "recommendations",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "I have ₹500. What should I order?", "Best items under ₹500",
+      "I have 1000 rupees budget", "What can I get for ₹300?",
+      "₹200 budget, suggest something", "I have ₹1500 to spend",
+      "Recommend within ₹800", "What's good under 250?",
+      "I have Rs 1000. Give me a combination of hot, sweet and spicy items.",
+      "Best combo under 500", "Fill my cart with 1000 rupees worth",
+      "I want to spend ₹700", "Budget 500 rupees what should I order"
+    ],
+    "responseStrategy": "Find a combination of products that fits within the budget from the actual catalog."
+  },
+  {
+    "intent": "recommend_combination",
+    "category": "recommendations",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Suggest a combination of products", "Give me a variety pack",
+      "Mix of sweet and spicy", "I want both pickles and sweets",
+      "Combo of different categories", "Assorted items",
+      "Give me one of each type", "Variety order",
+      "I want a mix of hot, sweet and spicy items"
+    ],
+    "responseStrategy": "Select products from multiple categories to create a diverse combination."
+  },
+  {
+    "intent": "recommend_similar",
+    "category": "recommendations",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Recommend something similar to mango pickle",
+      "What goes well with tomato pickle?", "Similar to laddu",
+      "Alternatives to chicken pickle", "Something like gongura pickle",
+      "Products like rasam powder", "Similar items"
+    ],
+    "responseStrategy": "Find products in the same category or with similar attributes from the catalog."
+  },
+  {
+    "intent": "recommend_party",
+    "category": "recommendations",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "I need food for a party", "Party order", "Suggest for a gathering",
+      "What should I order for 10 people?", "Bulk order suggestions",
+      "Items for a festival", "What's good for a celebration?",
+      "Suggest something for 2 people", "Family pack suggestion",
+      "What can I order for a party?"
+    ],
+    "responseStrategy": "Recommend a larger set of products suitable for gatherings from the catalog."
+  },
+  {
+    "intent": "product_compare",
+    "category": "product_information",
+    "requiresProductLookup": true,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Compare tomato pickle and mango pickle",
+      "Difference between chicken pickle and mutton pickle",
+      "Which is better, garam masala or sambar masala?",
+      "Compare these two products", "Which one should I pick?"
+    ],
+    "responseStrategy": "Retrieve both products from the catalog and present a side-by-side comparison."
+  },
+  {
+    "intent": "add_to_cart",
+    "category": "cart",
+    "requiresProductLookup": true,
+    "requiresCartModification": true,
+    "requiresUserData": false,
+    "examples": [
+      "Add tomato pickle to cart", "Add mango pickle to my cart",
+      "Add 2 chicken pickle", "Put laddu in my cart",
+      "I want to add rasam powder", "Add this to cart",
+      "Can you add boondi mixture?", "Get me gongura pickle",
+      "I want one tomato pickle", "Add 3 of those",
+      "Can u add mango pickle", "Put mango in cart",
+      "Add the cheapest snack to my cart", "Add that one",
+      "Add the first one", "Add the second one", "Add the third one",
+      "Add the last one", "Add all of them", "Add those to my cart",
+      "I'll take the mango pickle", "Give me 2 laddu",
+      "I want three tomato pickles", "Add 5 of the first one",
+      "Add two of the second item", "I want two of those",
+      "add it", "yes add it", "add that", "yeah add it to cart",
+      "add coke", "add a coke", "can u add coke", "put coke in cart",
+      "i want coke", "get me coke", "add 2 coke",
+      "Add the recommended item to my cart", "Add this product to my cart"
+    ],
+    "responseStrategy": "Find the matching product in the catalog. If found and unique, add to cart with quantity. If ambiguous, ask for clarification. If not found, inform user."
+  },
+  {
+    "intent": "remove_from_cart",
+    "category": "cart",
+    "requiresProductLookup": true,
+    "requiresCartModification": true,
+    "requiresUserData": false,
+    "examples": [
+      "Remove tomato pickle from cart", "Delete mango pickle from my cart",
+      "Take out the laddu", "Remove that item", "Remove it",
+      "I don't want the pickle anymore", "Cancel the chicken pickle",
+      "Remove the first item from cart"
+    ],
+    "responseStrategy": "Find the matching product in the user's cart and remove it."
+  },
+  {
+    "intent": "increase_quantity",
+    "category": "cart",
+    "requiresProductLookup": true,
+    "requiresCartModification": true,
+    "requiresUserData": false,
+    "examples": [
+      "Increase tomato pickle quantity", "Add one more mango pickle",
+      "I want one more of that", "Make it 3", "Increase quantity",
+      "Add another one", "One more please"
+    ],
+    "responseStrategy": "Find the product in the cart and increment its quantity."
+  },
+  {
+    "intent": "decrease_quantity",
+    "category": "cart",
+    "requiresProductLookup": true,
+    "requiresCartModification": true,
+    "requiresUserData": false,
+    "examples": [
+      "Decrease tomato pickle quantity", "Remove one mango pickle",
+      "I want one less", "Reduce quantity", "Make it 1",
+      "Decrease the laddu quantity"
+    ],
+    "responseStrategy": "Find the product in the cart and decrement its quantity."
+  },
+  {
+    "intent": "view_cart",
+    "category": "cart",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What's in my cart?", "Show my cart", "View cart",
+      "How many items are in my cart?", "Cart items",
+      "What did I add?", "Show me my cart items",
+      "What have I added so far?", "My cart", "Cart please",
+      "Whats in cart?", "Show cart items"
+    ],
+    "responseStrategy": "Read the user's current cart from the frontend state and display contents."
+  },
+  {
+    "intent": "cart_total",
+    "category": "cart",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "What's my cart total?", "How much is my cart?", "Total amount?",
+      "Cart total", "How much do I need to pay?", "Bill amount",
+      "What's the total?", "Total kithna hai?"
+    ],
+    "responseStrategy": "Calculate the total from the user's current cart data."
+  },
+  {
+    "intent": "clear_cart",
+    "category": "cart",
+    "requiresProductLookup": false,
+    "requiresCartModification": true,
+    "requiresUserData": false,
+    "examples": [
+      "Clear my cart", "Empty my cart", "Remove all items",
+      "Delete everything from cart", "Start fresh", "Reset cart",
+      "Remove all", "Clear everything"
+    ],
+    "responseStrategy": "Clear all items from the user's cart."
+  },
+  {
+    "intent": "order_how",
+    "category": "order",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How do I place an order?", "How to order?", "How does ordering work?",
+      "How to buy?", "Steps to place an order", "How do I purchase?",
+      "I want to place an order", "Help me order", "How can I order?",
+      "How to place order?", "Ordering process"
+    ],
+    "responseStrategy": "Explain the ordering process: browse menu, add to cart, go to checkout, select delivery, complete payment."
+  },
+  {
+    "intent": "checkout_help",
+    "category": "order",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How does checkout work?", "Help me with checkout",
+      "How do I check out?", "Checkout process", "How to complete my order?",
+      "What happens at checkout?", "Checkout steps",
+      "I want to checkout", "Take me to checkout"
+    ],
+    "responseStrategy": "Explain the checkout flow and guide the user."
+  },
+  {
+    "intent": "payment_methods",
+    "category": "payment",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How do I pay?", "What payment methods are available?",
+      "Do you accept online payment?", "Can I pay using Razorpay?",
+      "What payment options?", "Payment methods", "How to pay?",
+      "Can I pay with UPI?", "Do you accept cards?",
+      "What payment methods are supported?", "Cash on delivery available?"
+    ],
+    "responseStrategy": "Explain available payment methods including Razorpay integration."
+  },
+  {
+    "intent": "payment_failed",
+    "category": "payment",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "My payment failed. What should I do?", "Payment didn't go through",
+      "Transaction failed", "Money was deducted but order not placed",
+      "Payment error", "What happens if payment fails?",
+      "What happens if payment is unsuccessful?",
+      "Payment issue", "Transaction error", "Payment not working"
+    ],
+    "responseStrategy": "Advise the user about failed payment resolution and auto-refund policy."
+  },
+  {
+    "intent": "order_cancel",
+    "category": "order",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Can I cancel my order?", "How to cancel order?",
+      "I want to cancel", "Cancel my recent order",
+      "How do I cancel?", "Order cancellation"
+    ],
+    "responseStrategy": "Explain the cancellation policy and process."
+  },
+  {
+    "intent": "order_track",
+    "category": "order",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": true,
+    "examples": [
+      "How can I track my order?", "Where is my order?",
+      "Order status", "Track my order", "What is my order status?",
+      "When will my order arrive?", "Order tracking",
+      "Is my order shipped?", "Has my order been dispatched?"
+    ],
+    "responseStrategy": "Guide the user to their profile/orders page to check order status."
+  },
+  {
+    "intent": "delivery_info",
+    "category": "delivery",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Do you deliver?", "How does delivery work?",
+      "How long does delivery take?", "Delivery time",
+      "What are the delivery charges?", "Delivery fees",
+      "Can I choose a delivery date?", "Delivery options",
+      "Is delivery available to my location?", "Do you deliver to my area?",
+      "Can I choose a delivery time?", "Shipping charges",
+      "Free delivery?", "How much for delivery?"
+    ],
+    "responseStrategy": "Explain delivery options, estimated times, and charges."
+  },
+  {
+    "intent": "delivery_pickup",
+    "category": "delivery",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Can I pick up my order?", "Store pickup available?",
+      "Self pickup option", "Where is your store?",
+      "Store location", "Pick up from store",
+      "Do you have pickup option?"
+    ],
+    "responseStrategy": "Explain store pickup option and store location details."
+  },
+  {
+    "intent": "account_create",
+    "category": "account",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How do I create an account?", "Sign up", "Register",
+      "I want to create an account", "How to register?",
+      "New account", "Sign me up", "Registration process"
+    ],
+    "responseStrategy": "Explain the registration process."
+  },
+  {
+    "intent": "account_login",
+    "category": "account",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How do I log in?", "Login help", "I can't login",
+      "How to sign in?", "Login process", "I forgot my password",
+      "How do I login?", "Log in help", "Sign in",
+      "How to login to my account?", "Login steps"
+    ],
+    "responseStrategy": "Explain the login process and password recovery."
+  },
+  {
+    "intent": "account_profile",
+    "category": "account",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "How do I update my profile?", "Change my details",
+      "Edit profile", "Update my address", "Change my name",
+      "How do I change my password?", "Update profile info",
+      "How do I view my orders?", "Show my orders",
+      "How do I log out?", "Logout"
+    ],
+    "responseStrategy": "Guide the user to profile page for account management."
+  },
+  {
+    "intent": "navigate_cart",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Take me to the cart", "Go to cart", "Open cart",
+      "Show my cart page", "Cart page", "Open my cart"
+    ],
+    "responseStrategy": "Provide a link to navigate to the cart page."
+  },
+  {
+    "intent": "navigate_checkout",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Take me to checkout", "Go to checkout", "I want to checkout",
+      "Checkout page", "Proceed to checkout"
+    ],
+    "responseStrategy": "Provide a link to navigate to the checkout page."
+  },
+  {
+    "intent": "navigate_orders",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Show my orders", "Order history", "My orders",
+      "Previous orders", "Past orders"
+    ],
+    "responseStrategy": "Provide a link to navigate to the orders/profile page."
+  },
+  {
+    "intent": "navigate_profile",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Open my profile", "Go to profile", "My account",
+      "Profile page", "Account settings"
+    ],
+    "responseStrategy": "Provide a link to navigate to the profile page."
+  },
+  {
+    "intent": "navigate_menu",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Show me the menu", "Menu page", "Browse products",
+      "Show me available products", "Go to menu", "Open menu",
+      "Take me to the menu", "Browse menu"
+    ],
+    "responseStrategy": "Provide a link to navigate to the menu page."
+  },
+  {
+    "intent": "navigate_help_order",
+    "category": "navigation",
+    "requiresProductLookup": false,
+    "requiresCartModification": false,
+    "requiresUserData": false,
+    "examples": [
+      "Help me place an order", "I want to order",
+      "Guide me through ordering", "Walk me through the process"
+    ],
+    "responseStrategy": "Provide step-by-step ordering guidance and relevant navigation links."
+  }
+]

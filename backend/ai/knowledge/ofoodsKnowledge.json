@@ -1,0 +1,30 @@
+[
+  {
+    "id": "faq_default_1",
+    "category": "login",
+    "question": "How do I login?",
+    "answer": "You can login by clicking on the Profile icon or 'Login' button at the top right of the page. Enter your registered email and password.",
+    "keywords": ["login", "sign in", "access account", "log in"]
+  },
+  {
+    "id": "faq_default_2",
+    "category": "login",
+    "question": "I forgot my password",
+    "answer": "You can reset your password by clicking 'Forgot Password' on the login screen. You will receive an email with instructions.",
+    "keywords": ["forgot password", "reset password", "lost password"]
+  },
+  {
+    "id": "faq_default_3",
+    "category": "checkout",
+    "question": "How do I checkout?",
+    "answer": "Go to your Cart by clicking the Cart icon, review your items, and click 'Proceed to Checkout'. Follow the prompts to enter your address and payment details.",
+    "keywords": ["checkout", "pay", "complete order", "place order"]
+  },
+  {
+    "id": "faq_default_4",
+    "category": "payment",
+    "question": "How does Razorpay payment work?",
+    "answer": "We use Razorpay for secure payments. During checkout, you will be redirected to the Razorpay gateway where you can pay using UPI, Credit/Debit Cards, or Netbanking.",
+    "keywords": ["razorpay", "payment", "upi", "card"]
+  }
+]
