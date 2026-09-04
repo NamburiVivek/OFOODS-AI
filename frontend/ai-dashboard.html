@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFoods AI Revenue Recovery Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d40d0d;
+            --bg: #0D0D0D;
+            --surface: #1A1A1A;
+            --text: #F5F0E8;
+            --text-muted: #7A7068;
+            --success: #2e7d32;
+            --warning: #f57c00;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .stat-card h3 { margin: 0; color: var(--text-muted); font-size: 14px; text-transform: uppercase; }
+        .stat-card .value { font-size: 32px; font-weight: 700; color: var(--primary); margin: 10px 0 0; }
+        
+        table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+        th { background: #222; color: var(--text-muted); font-weight: 600; }
+        .probability-bar { width: 100%; background: #333; height: 8px; border-radius: 4px; margin-top: 5px; }
+        .probability-fill { height: 100%; background: var(--primary); border-radius: 4px; }
+        
+        .btn { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .btn-approve { background: var(--success); color: white; margin-right: 10px; }
+        .btn-reject { background: #333; color: white; }
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        .status-pending { background: var(--warning); color: #000; }
+        .status-recovered { background: var(--success); color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1 style="margin:0;color:var(--primary);">OFoods AI</h1>
+            <p style="margin:5px 0 0;color:var(--text-muted);">Revenue Recovery Dashboard</p>
+        </div>
+    </div>
+
+    <div class="stats-grid" id="statsGrid">
+        <div class="stat-card"><h3>Total AI Cases</h3><div class="value" id="statTotal">-</div></div>
+        <div class="stat-card"><h3>Recovered</h3><div class="value" id="statRecovered" style="color:var(--success)">-</div></div>
+        <div class="stat-card"><h3>Recovery Rate</h3><div class="value" id="statRate">-</div></div>
+    </div>
+
+    <h2>Active Recovery Cases</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Type</th>
+                <th>AI Strategy</th>
+                <th>Recovery Probability</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="casesTableBody">
+            <!-- Populated by JS -->
+        </tbody>
+    </table>
+
+    <script src="ai-dashboard.js"></script>
+</body>
+</html>
