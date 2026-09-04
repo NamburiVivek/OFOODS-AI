@@ -1,298 +1,697 @@
-# O Foods AI – Agentic Revenue Recovery Platform
+OFOODS AI — Agentic Commerce Assistant
 
-## 🚀 Razorpay AI Intern Challenge Submission
+AI-powered agentic commerce platform for intelligent food discovery, personalized recommendations, cart assistance, and AI-driven revenue recovery.
 
-**Website:** https://www.ofoods.co.in
+OFOODS AI extends the OFOODS e-commerce platform with an AI layer that helps customers move from intent → product discovery → cart → checkout, while also helping the business recover revenue from payment failures and abandoned carts.
 
-O Foods AI transforms the existing O Foods production-ready e-commerce platform into an agentic commerce engine. It leverages a custom-built AI Agent to intercept payment failures and cart abandonments, analyze customer lifetime value, and execute personalized recovery strategies to salvage lost revenue.
+Built for the Razorpay Buildathon — Track 1: AI Growth & Agentic Commerce.
 
-The system also includes a floating AI Customer Assistant to help users discover products based on their intent and budget.
+🚀 What is OFOODS AI?
 
----
+Traditional e-commerce makes customers navigate menus, search products, compare options, manage their cart, and complete checkout manually.
 
-## ✨ Features
+OFOODS AI changes this into a conversational commerce experience.
 
-### Customer Features
+A customer can simply ask things like:
 
-* User Registration & Login
-* Secure JWT Authentication
-* Product Browsing & Search
-* Category-Based Navigation
-* Product Detail Pages
-* Shopping Cart Management
-* Checkout System
-* Home Delivery
-* Store Pickup Scheduling
-* Razorpay Online Payments
-* Customer Profiles
-* Multiple Saved Addresses
-* Order History
-* Product Reviews & Ratings
-* Mobile Responsive Design
+"What should I order?"
 
-### Business Features
+"Show me something under ₹500"
 
-* Admin Authentication
-* Order Management Dashboard
-* Shipment Tracking Management
-* Customer Notification System
-* Email Notifications
-* SMS Notifications
-* Inventory & Product Management
-* Customer Data Management
+"I want something spicy"
 
----
+"Find products similar to this"
 
-## 🛠️ Tech Stack
+"Add this to my cart"
 
-### Frontend
+"What's in my cart?"
 
-* HTML5
-* CSS3
-* JavaScript (Vanilla JS)
-* Responsive Mobile Design
+"How do I checkout?"
 
-### Backend
+"How does Razorpay payment work?"
 
-* Node.js
-* Express.js
+The AI understands the customer's intent, uses the OFOODS product catalog and customer context, and responds with relevant products or actions.
 
-### Database
+At the business side, the AI recovery pipeline identifies payment failures and abandoned carts, evaluates the customer and cart context, predicts recovery probability, and generates a recovery strategy for admin review.
 
-* MySQL
+🎯 Problem
 
-### Authentication & Security
+Online food shopping often requires customers to:
 
-* JWT (JSON Web Tokens)
-* bcryptjs Password Hashing
+Browse multiple categories
 
-### Payments
+Search manually for products
 
-* Razorpay
+Compare products
 
-### Notifications
+Decide what fits their budget
 
-* Nodemailer
+Add products to the cart
 
-### Deployment
+Complete checkout
 
-* Vercel
+Resolve payment or delivery questions
 
----
+At the same time, businesses lose potential revenue when customers abandon carts or payments fail.
 
-## 🏗️ System Architecture
+OFOODS AI addresses both sides:
 
-Frontend (HTML/CSS/JavaScript)
+Customer side
 
-↓
+Intent → AI understanding → Product discovery → Recommendation → Cart action → Checkout
 
-Express.js REST API
+Business side
 
-↓
+Payment/cart drop-off → Customer analysis → Recovery prediction → AI strategy → Human approval → Recovery action
 
-Authentication Layer (JWT)
+✨ Key Features
 
-↓
+🤖 AI Shopping Assistant
 
-Business Logic Layer
+A conversational AI assistant integrated into the OFOODS website.
 
-↓
+It supports:
 
-MySQL Database
+Product search
 
-↓
+Product discovery
 
-External Services
+Budget-based recommendations
 
-* Razorpay
-* Nodemailer
+Category recommendations
+
+Similar-product recommendations
+
+Product comparisons
+
+Popular products
+
+Vegetarian products
+
+Sweet, spicy, and hot product discovery
+
+Product information
+
+Cart queries
+
+Add/remove products from cart
+
+Increase/decrease quantity
+
+Cart total
+
+Checkout assistance
+
+Payment assistance
+
+Delivery and pickup information
+
+Order-related assistance
+
+Account assistance
+
+🧠 Intent-Aware AI
+
+The assistant does not treat every message as a generic chatbot query.
+
+It identifies the customer's intent and extracts useful information such as:
+
+Budget
+
+Product name
+
+Category
+
+Quantity
+
+Product references
+
+Current page
+
+Cart context
+
+Recent conversation history
+
+This allows the system to connect natural-language requests with actual e-commerce actions.
+
+🛒 AI + Real Cart Integration
+
+The AI assistant is connected to the existing OFOODS cart mechanism.
+
+For example:
+
+Customer:
+"Add tomato pickle to my cart"
+
+        ↓
+
+AI Intent Detection
+
+        ↓
+
+Product Catalog Matching
+
+        ↓
+
+Exact Product Resolution
+
+        ↓
+
+Cart Update
+
+        ↓
+
+Customer Confirmation
+
+The assistant can also process requests such as:
+
+"Remove it"
+"Add 2 more"
+"What's my cart total?"
+"Clear my cart"
+
+💰 Budget-Aware Recommendations
+
+Customers can express a budget naturally:
+
+"Give me snacks under ₹300"
+"Best products under ₹500"
+"I need something cheap and spicy"
+
+The AI identifies the budget requirement and uses the product engine to return suitable products.
+
+👤 Context-Aware Shopping
+
+The AI can use:
+
+Customer name
+
+Current page
+
+Current cart
+
+Cart total
+
+Recent conversation history
+
+Previously displayed products
+
+This makes recommendations more contextual instead of treating every query independently.
+
+📦 AI Revenue Recovery
+
+OFOODS AI also contains an AI-driven revenue recovery pipeline.
+
+It can process drop-off events such as:
+
+Payment failures
+
+Abandoned carts
+
+The recovery pipeline performs:
+
+Drop-off Event
+      ↓
+Customer Analysis
+      ↓
+Recovery Probability
+      ↓
+AI Recovery Strategy
+      ↓
+Recovery Case
+      ↓
+Admin Review
+      ↓
+Action
+
+📊 Customer Analysis
+
+The recovery system analyzes customer context including:
+
+Lifetime value
+
+Total orders
+
+Abandoned cart history
+
+Cart value
+
+Customer behavior
+
+This information is used to generate a more appropriate recovery strategy.
+
+📈 Recovery Prediction
+
+A deterministic recovery predictor calculates a baseline recovery probability using customer and cart characteristics.
+
+The system considers factors such as:
+
+Previous abandoned carts
+
+Customer lifetime value
+
+Number of previous orders
+
+Cart value relative to customer history
+
+🧠 AI Recovery Strategy
+
+Gemini is used to generate a recovery recommendation based on the customer and drop-off context.
+
+Possible strategies include:
+
+Standard reminder
+
+Discount-based recovery
+
+Free-delivery incentive
+
+Personalized outreach
+
+The system also includes deterministic fallback behavior if the AI provider is unavailable.
+
+👨‍💼 Human-in-the-Loop AI Dashboard
+
+AI-generated recovery cases are surfaced through an admin dashboard.
+
+Admins can review the AI recommendation before taking action.
+
+This keeps the system practical and controllable rather than allowing an AI agent to perform sensitive revenue actions without oversight.
+
+💳 Razorpay Integration
+
+Razorpay is integrated into the OFOODS checkout and payment flow.
+
+The application includes:
+
+Razorpay checkout
+
+Payment order creation
+
+Payment verification
+
+Payment failure handling
+
+AI recovery workflows around payment/cart drop-offs
+
+This connects the AI experience directly to the commerce and payment lifecycle.
+
+Razorpay's current agentic commerce direction focuses on moving commerce from traditional navigation toward experiences where customers can express intent, discover products, and complete transactions within the same journey. OFOODS AI is designed around this same intent-to-commerce concept.
+
+🏗️ Architecture
+
+                    ┌─────────────────────┐
+                    │      Customer       │
+                    │ Natural Language    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ OFOODS AI Assistant │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Intent Detection  │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+       Product Catalog    User Context      Knowledge Base
+              │                │                │
+              └────────────────┼────────────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │ Product / Action    │
+                    │ Engine              │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    ▼                     ▼
+                 Products             Cart Action
+                    │                     │
+                    └──────────┬──────────┘
+                               ▼
+                         OFOODS Store
 
 
----
+              BUSINESS REVENUE RECOVERY FLOW
 
-## 📦 Core Modules
+       Payment Failure / Cart Abandonment
+                       │
+                       ▼
+              Customer Analyzer
+                       │
+                       ▼
+             Recovery Predictor
+                       │
+                       ▼
+              Gemini AI Strategy
+                       │
+                       ▼
+              Recovery Case DB
+                       │
+                       ▼
+               Admin AI Dashboard
+                       │
+                       ▼
+                 Human Approval
+                       │
+                       ▼
+                Recovery Action
 
-### User Management
+🛠️ Technology Stack
 
-* Registration
-* Login
-* Authentication
-* Profile Management
-* Address Management
+Frontend
 
-### Product Management
+HTML5
 
-* Product Listings
-* Categories
-* Search Functionality
-* Product Details
+CSS3
 
-### Shopping Experience
+Vanilla JavaScript
 
-* Cart Management
-* Checkout Flow
-* Order Placement
-* Payment Processing
+Responsive mobile design
 
-### Order Management
+Backend
 
-* Order Tracking
-* Shipping Updates
-* Delivery Status
-* Pickup Scheduling
+Node.js
 
-### Review System
+Express.js
 
-* Customer Ratings
-* Product Reviews
+REST APIs
 
----
+AI
 
-## 🚀 Installation
+Google Gemini
 
-### Clone Repository
+@google/genai
 
-```bash
+Intent detection
+
+Product recommendation
+
+Context-aware conversations
+
+AI revenue recovery strategy generation
+
+Database
+
+MySQL
+
+mysql2
+
+Payments
+
+Razorpay
+
+Authentication
+
+JWT
+
+bcryptjs
+
+Communication
+
+Nodemailer
+
+Email notifications
+
+Deployment
+
+Vercel
+
+📁 Project Structure
+
+OFOODS AI/
+│
+├── ai/
+│   ├── architecture.md
+│   └── evaluation.md
+│
+├── backend/
+│   ├── ai/
+│   │   ├── agent.js
+│   │   ├── catalog.js
+│   │   ├── customerAnalyzer.js
+│   │   ├── dataset.json
+│   │   ├── intentDetector.js
+│   │   ├── llmService.js
+│   │   ├── productEngine.js
+│   │   ├── recoveryPredictor.js
+│   │   ├── userContextService.js
+│   │   └── knowledge/
+│   │       ├── knowledgeLoader.js
+│   │       ├── knowledgeRetriever.js
+│   │       └── ofoodsKnowledge.json
+│   │
+│   ├── aiRecoveryRoutes.js
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── ai-assistant.js
+│   ├── ai-dashboard.html
+│   ├── ai-dashboard.js
+│   ├── index.html
+│   ├── menu.html
+│   ├── cart.html
+│   ├── Checkout.html
+│   ├── login.html
+│   ├── profile.html
+│   └── ...
+│
+├── products-seed.json
+├── vercel.json
+├── robots.txt
+├── sitemap.xml
+└── README.md
+
+⚙️ Local Setup
+
+1. Clone the repository
+
 git clone https://github.com/NamburiVivek/Ofoods26-Ecommerce.git
-
 cd Ofoods26-Ecommerce
-```
 
-### Install Dependencies
+2. Install backend dependencies
 
-```bash
+cd backend
 npm install
-```
 
-### Create Environment File
+3. Configure environment variables
 
-Create a `.env` file in the root directory:
+Create:
 
-```env
+backend/.env
+
+Use the following structure:
+
 DB_HOST=
-DB_PORT=
 DB_USER=
 DB_PASSWORD=
 DB_NAME=
+DB_PORT=
 
 JWT_SECRET=
 
 RAZORPAY_KEY_ID=
 RAZORPAY_KEY_SECRET=
 
-EMAIL_USER=
-EMAIL_PASS=
-```
+GMAIL_USER=
+GMAIL_APP_PASSWORD=
 
-### Run Development Server
+AI_PROVIDER=gemini
+AI_API_KEY=
+AI_MODEL=
 
-```bash
+Do not commit .env or API/payment secrets to GitHub.
+
+4. Start the backend
+
+Development:
+
 npm run dev
-```
 
-### Run Production Server
+Production:
 
-```bash
 npm start
-```
 
----
+The application runs on:
 
-## 📁 Project Structure
+http://localhost:3000
 
-Ofoods26-Ecommerce/
-│
-├── backend/
-│   ├── .env.example
-│   ├── package.json
-│   ├── package-lock.json
-│   └── server.js
-│
-├── frontend/
-│   ├── Admin login.html
-│   ├── Admin.html
-│   ├── all-items.html
-│   ├── cart.html
-│   ├── Checkout.html
-│   ├── conformation.html
-│   ├── date-utils.js
-│   ├── delivery-mode.js
-│   ├── index.html
-│   ├── login.html
-│   ├── menu.html
-│   ├── mobile.css
-│   ├── papad.html
-│   ├── pickles.html
-│   ├── price-sync.js
-│   ├── product.html
-│   ├── profile.html
-│   ├── review.html
-│   ├── snacks.html
-│   ├── spices.html
-│   └── images/
-│       ├── logo2.png
-│       ├── boneless.Webp
-│       ├── chicken boneless.Webp
-│       ├── tomato.Webp
-│       └── ...other product images
-│
-├── products-seed.json
-├── README.md
-├── robots.txt
-├── sitemap.xml
-├── vercel.json
-└── .gitignore
+The Express server also serves the frontend, so the complete OFOODS application can be accessed through the same local server.
 
----
+🔑 AI Configuration
 
-## 🔐 Security Features
+The AI service uses Gemini through the Google GenAI SDK.
 
-* Password Hashing using bcryptjs
-* JWT-Based Authentication
-* Protected Admin Routes
-* Secure Payment Verification
-* Input Validation
-* Environment Variable Protection
+Configure:
 
----
+AI_PROVIDER=gemini
+AI_API_KEY=your_api_key
+AI_MODEL=your_model
 
-## 📱 Responsive Design
+If the AI provider is unavailable, the system has fallback behavior for important recommendation and recovery flows.
 
-The platform is optimized for:
+🧪 AI Evaluation
 
-* Desktop
-* Tablet
-* Mobile Devices
+The project includes an AI evaluation suite covering scenarios such as:
 
-Responsive layouts have been implemented across product listings, checkout, cart management, profile pages, and administrative modules.
+Budget extraction
 
----
+Category recommendation
 
-## 🎯 Business Impact
+Product-engine budget constraints
 
-This project was developed and deployed for a real food business operating in Amaravati, Andhra Pradesh.
+Context requirements
 
-Key outcomes:
+The current evaluation suite in the project reports:
 
-* Established an online ordering system
-* Enabled digital product discovery
-* Improved customer convenience
-* Supported home delivery and pickup workflows
-* Automated order communication through email and SMS
-* Streamlined business operations
+Passed: 4
+Failed: 0
 
----
+Additional recovery scenarios are documented in:
 
-## 👨‍💻 Developer
+ai/evaluation.md
 
-**Vivek Namburi**
+🔐 Security
 
-* GitHub: https://github.com/NamburiVivek
-* Website: https://www.ofoods.co.in
+The application includes:
 
----
+Password hashing with bcryptjs
 
-## 📄 License
+JWT authentication
 
-This project is developed and maintained by the author for O Foods business operations.
+Protected authenticated routes
+
+Admin authentication
+
+Environment-variable based secret management
+
+Razorpay payment verification
+
+Input validation
+
+CORS configuration
+
+.env excluded from Git through .gitignore
+
+📱 E-Commerce Capabilities
+
+OFOODS includes a complete online shopping workflow:
+
+Registration and login
+
+Product browsing
+
+Category navigation
+
+Product details
+
+Search
+
+Shopping cart
+
+Checkout
+
+Razorpay payments
+
+Home delivery
+
+Store pickup
+
+Customer profiles
+
+Saved addresses
+
+Order history
+
+Reviews and ratings
+
+Admin order management
+
+Shipment tracking
+
+Email notifications
+
+Responsive design
+
+🌟 Why OFOODS AI Fits Agentic Commerce
+
+OFOODS AI is not only a chatbot placed on top of an e-commerce website.
+
+The AI is connected to the actual commerce workflow.
+
+It can:
+
+UNDERSTAND
+    ↓
+customer intent
+
+DECIDE
+    ↓
+what products/actions are relevant
+
+ACT
+    ↓
+recommend products / modify cart / guide checkout
+
+RECOVER
+    ↓
+identify and respond to lost-commerce opportunities
+
+This creates a more autonomous and intent-driven shopping experience.
+
+🔮 Future Scope
+
+Potential future improvements include:
+
+Fully autonomous agentic checkout
+
+Consent-based delegated payments
+
+Voice-based shopping
+
+Multilingual Indian-language shopping
+
+Personalized offers based on customer behavior
+
+Automated abandoned-cart recovery
+
+AI-driven reorder predictions
+
+Advanced customer lifetime-value modeling
+
+More payment and commerce tools exposed to the AI agent
+
+Real-time business analytics
+
+🏆 Buildathon Submission
+
+Project: OFOODS AI — Agentic Commerce Assistant
+
+Track: AI Growth & Agentic Commerce
+
+Repository:
+https://github.com/NamburiVivek/Ofoods26-Ecommerce
+
+Live Website:
+https://www.ofoods.co.in
+
+Buildathon:
+https://razorpay.com/buildathon/
+
+👨‍💻 Developer
+
+Vivek Namburi
+
+GitHub: https://github.com/NamburiVivek
+
+OFOODS: https://www.ofoods.co.in
+
+📄 License
+
+This project is developed and maintained for OFOODS business operations.
+
 All rights reserved.
